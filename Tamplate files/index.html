@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>House of Posh | Luxury Beauty, Wellness & Perfume in Johannesburg</title>
+  <meta name="description" content="Premium makeup, hair, facials, body contouring & luxury perfumes in Johannesburg. Book your elegant experience today.">
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Splash Screen -->
+  <div id="splash">
+    <img src="houseof posh logo.png" alt="House of Posh Logo" class="splash-logo" loading="lazy" width="160" height="160">
+    <p class="splash-text">Wellness. Beauty. Lifestyle.</p>
+  </div>
+
+  <!-- Header + Navigation -->
+  <header class="header">
+    <div class="logo-area">
+      <img src="houseof posh logo.png" alt="House of Posh Logo" class="main-logo" loading="lazy" width="70" height="70">
+      <span class="brand-name">House of Posh</span>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="perfumes.html">Perfumes</a></li>
+        <li><a href="bookings.html">Bookings</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Hero Slideshow (REPLACES OLD HERO) -->
+  <section class="hero-slideshow">
+    <div class="slides">
+      <div class="slide active">
+        <img src="hero1.jpg" alt="Luxury makeup transformation at House of Posh" loading="lazy" width="1920" height="1080">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>✨ Bridal Glamour</h2>
+          <p>Flawless makeup for your perfect day</p>
+          <a href="bookings.html" class="cta-button">Book Now</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="hero2.jpg" alt="Premium perfume collection – Wild Bluebell, Velvet Orchid" loading="lazy" width="1920" height="1080">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>🌹 Signature Scents</h2>
+          <p>Luxury perfumes from R450</p>
+          <a href="perfumes.html" class="cta-button">Explore</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="hero3.jpg" alt="Facial and wellness treatment in Johannesburg" loading="lazy" width="1920" height="1080">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>💆‍♀️ Radiant Skin</h2>
+          <p>Glow-enhancing facials & wellness</p>
+          <a href="services.html" class="cta-button">View Services</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="hero4.jpg" alt="Body contouring and massage therapy" loading="lazy" width="1920" height="1080">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>🧖‍♀️ Sculpt & Soothe</h2>
+          <p>Non-invasive body contouring</p>
+          <a href="bookings.html" class="cta-button">Book Session</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="hero5.jpg" alt="Luxury hair weave and styling at House of Posh" loading="lazy" width="1920" height="1080">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>💇‍♀️ Signature Hair</h2>
+          <p>From curls to straight — flawless finish</p>
+          <a href="services.html" class="cta-button">See Hair Services</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="hero6.jpg" alt="House of Posh lifestyle elegance in Johannesburg" loading="lazy" width="1920" height="1080">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>💜 House of Posh</h2>
+          <p>Wellness. Beauty. Lifestyle.</p>
+          <a href="about.html" class="cta-button">Discover Our Story</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button class="slide-arrow prev" aria-label="Previous slide">‹</button>
+    <button class="slide-arrow next" aria-label="Next slide">›</button>
+
+    <!-- Indicators -->
+    <div class="slide-indicators">
+      <span class="indicator active" data-slide="0"></span>
+      <span class="indicator" data-slide="1"></span>
+      <span class="indicator" data-slide="2"></span>
+      <span class="indicator" data-slide="3"></span>
+      <span class="indicator" data-slide="4"></span>
+      <span class="indicator" data-slide="5"></span>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="reviews">
+    <div class="container">
+      <h2 class="section-title">What Our Clients Say</h2>
+      <div class="review-grid">
+        <div class="review-card">
+          <p>“House of Posh made my event unforgettable — elegant, smooth, and stress-free!”</p>
+          <h4>- Posh Client</h4>
+        </div>
+        <div class="review-card">
+          <p>“Their beauty treatments are top-tier — I felt refreshed and confident again!”</p>
+          <h4>- Wellness Customer</h4>
+        </div>
+        <div class="review-card">
+          <p>“The entire experience was pure luxury from start to finish.”</p>
+          <h4>- Lifestyle Guest</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Featured On (Branded & Consistent) -->
+<section class="featured-on">
+  <p>Featured on</p>
+  <div class="logos">
+    <a href="https://facebook.com" target="_blank" aria-label="Follow us on Facebook">
+      <img src="facebook.svg" alt="Facebook" class="social-logo">
+    </a>
+    <a href="https://instagram.com" target="_blank" aria-label="Follow us on Instagram">
+      <img src="instagram.svg" alt="Instagram" class="social-logo">
+    </a>
+    <a href="https://wa.me/27772449092" target="_blank" aria-label="Chat with us on WhatsApp">
+      <img src="whatsapp.svg" alt="WhatsApp" class="social-logo">
+    </a>
+  </div>
+</section>
+
+  <!-- Call To Action -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Elevate Your Lifestyle?</h2>
+      <a href="bookings.html" class="cta-main-btn">Book Your Experience</a>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/27772449092" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
