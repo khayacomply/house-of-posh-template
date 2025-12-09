@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Frequently asked questions about our luxury beauty services, bookings, and policies at House of Posh in Johannesburg." />
+  <title>FAQ | House of Posh – Luxury Beauty & Perfume</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo-area">
+      <img src="assets/images/house-of-posh-logo.png" alt="House of Posh Logo" class="main-logo" loading="lazy" width="70" height="70">
+      <span class="brand-name">House of Posh</span>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="perfumes.html">Perfumes</a></li>
+        <li><a href="bookings.html">Bookings</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- ✅ Hero: Full-screen with luxury image -->
+  <section class="faq-hero-full">
+    <img src="assets/images/faq.webp" alt="House of Posh – Frequently Asked Questions" loading="lazy">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Frequently Asked Questions</h1>
+      <p>Your questions, answered with elegance</p>
+    </div>
+  </section>
+
+  <!-- ✅ FAQ Section (styled via CSS) -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">✨ How do I book an appointment?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <p>You can book online via our <a href="bookings.html">Booking Page</a> or message us directly on <a href="https://wa.me/27772449092">WhatsApp</a>.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">👰 Do you offer bridal packages?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <p>Yes! We specialize in bridal makeup, hair, and pre-wedding wellness treatments. Contact us for a custom quote.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">⏳ What’s your cancellation policy?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <p>We require 24 hours’ notice for cancellations or rescheduling. Late cancellations may incur a 50% fee.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">🌹 Are your perfumes original?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <p>Yes. Our perfumes are premium, handcrafted signature scents created in-house — not imitations.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">🚶‍♀️ Do you accept walk-ins?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <p>We operate by appointment only to ensure personalized service and privacy.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">📍 Where are you located?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <p>We’re based in Johannesburg, South Africa. Exact address shared upon confirmed booking for privacy.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">🔒 Is your website secure?<i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            <p>Yes. We do not store personal data on servers. All form submissions go directly to our business WhatsApp or email.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Still have questions?</h2>
+   <a href="contact.html" class="cta-button" style="max-width: 240px; margin: 20px auto; padding: 12px 28px; font-size: 1rem;">
+  Contact Us
+</a>
+<!-- Go Back Button – Centered in Page Flow -->
+<div style="text-align: center; margin: 60px 0 40px;">
+  <a href="javascript:history.back()" class="cta-button" style="max-width: 240px; margin: 0 auto; padding: 12px 24px; font-size: 0.95rem; display: inline-block;">
+    ← Back to Previous Page
+  </a>
+</div>
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/27772449092" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Optional: Add this JS for toggle functionality -->
+  <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const isOpen = answer.style.display === 'block';
+        // Close all answers
+        document.querySelectorAll('.faq-answer').forEach(el => el.style.display = 'none');
+        // Open this one if not already open
+        if (!isOpen) answer.style.display = 'block';
+      });
+    });
+  </script>
+
+</body>
+</html>

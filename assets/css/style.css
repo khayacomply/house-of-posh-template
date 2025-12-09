@@ -1,0 +1,1651 @@
+/* ================================
+   HOUSE OF POSH 
+================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===================== SPLASH SCREEN ===================== */
+#splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at center, #000 70%, #1a001a 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.splash-logo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: contain;
+  box-shadow: 0 0 20px #b890d1;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.splash-text {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #b890d1;
+  letter-spacing: 1px;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 10px #b890d1; }
+  100% { box-shadow: 0 0 40px #b890d1; }
+}
+
+/* ===================== HEADER & NAVIGATION ===================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: contain;
+  box-shadow: 0 0 15px rgba(184, 144, 209, 0.4);
+}
+
+.brand-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8rem;
+  color: #b890d1;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(184,144,209,0.5);
+}
+
+.brand-name::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #b890d1;
+  margin: 4px auto 0;
+  border-radius: 2px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s, border-bottom 0.3s;
+  border-bottom: 2px solid transparent;
+}
+
+.nav ul li a:hover,
+.nav ul li a.active {
+  color: #b890d1;
+  border-bottom: 2px solid #b890d1;
+}
+
+.hamburger {
+  display: none;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  width: 100%;
+  transition: 0.3s ease;
+}
+
+/* Mobile Nav */
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .nav ul {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgba(0,0,0,0.95);
+    padding: 20px;
+    border-radius: 12px;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    width: 180px;
+  }
+  .nav.open ul { display: flex; }
+}
+
+/* ===================== HERO SLIDESHOW (LUXURY STYLE — MATCH SERVICES/PERFUMES) ===================== */
+.hero-slideshow {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.slide-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 2;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+/* ✨ LUXURY TEXT — MATCH OTHER PAGES ✨ */
+.slide-content h2,
+.slide-content.center-text h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.8rem;
+  color: #e6d4ff;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 12px rgba(184, 144, 209, 0.6);
+  font-weight: 400;
+}
+
+.slide-content p,
+.slide-content.center-text p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  color: #f0e7ff;
+  margin-bottom: 25px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  line-height: 1.5;
+}
+
+.slide-content .cta-button,
+.slide-content.center-text .cta-button {
+  background: #b890d1;
+  color: #000;
+  padding: 14px 36px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(184, 144, 209, 0.3);
+}
+
+.slide-content .cta-button:hover,
+.slide-content.center-text .cta-button:hover {
+  background: #fff;
+  color: #b890d1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 144, 209, 0.5);
+}
+
+/* Arrows */
+.slide-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-arrow:hover {
+  background: rgba(184,144,209,0.8);
+}
+
+.slide-arrow.prev { left: 20px; }
+.slide-arrow.next { right: 20px; }
+
+/* Indicators */
+.slide-indicators {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.indicator.active,
+.indicator:hover {
+  background: #b890d1;
+}
+
+/* Mobile Adjust */
+@media (max-width: 768px) {
+  .slide-content h2,
+  .slide-content.center-text h2 {
+    font-size: 2.8rem;
+  }
+  .slide-content p,
+  .slide-content.center-text p {
+    font-size: 1.1rem;
+  }
+  .slide-content .cta-button,
+  .slide-content.center-text .cta-button {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+  .slide-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+/* ===================== REVIEWS ===================== */
+.reviews {
+  background: #0a000a;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: #b890d1;
+  margin-bottom: 40px;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.review-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(184,144,209,0.3);
+  transition: 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 40px rgba(184,144,209,0.6);
+}
+
+.review-card p {
+  color: #c9b7d9;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.review-card h4 {
+  color: #b890d1;
+  font-weight: 600;
+}
+
+/* ===================== SERVICES ===================== */
+.services-grid {
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.service-row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(184,144,209,0.3);
+  transition: transform 0.4s ease;
+  padding: 40px;
+}
+
+.service-row:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 45px rgba(184,144,209,0.6);
+}
+
+.service-row.reverse { 
+  flex-direction: row-reverse; 
+}
+
+.service-image img {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.service-text {
+  flex: 1;
+  color: #fff;
+  text-align: left;
+}
+
+.service-text h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #b890d1;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 8px rgba(184,144,209,0.3);
+}
+
+.service-text p {
+  font-family: 'Poppins', sans-serif;
+  color: #d8c5e6;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin-bottom: 25px;
+}
+
+/* ===================== LUXURY PRICE LIST ===================== */
+.price-list {
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.price-list li {
+  color: #e6d5f5;
+  font-size: 1.05rem;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dotted rgba(255,255,255,0.1);
+}
+
+.price-list li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.price-list span {
+  color: #b890d1;
+  font-weight: 600;
+  min-width: 85px;
+  text-align: right;
+  text-shadow: 0 0 6px rgba(184,144,209,0.3);
+  transition: text-shadow 0.3s ease;
+}
+
+.price-list span:hover {
+  text-shadow: 0 0 12px rgba(184,144,209,0.6);
+}
+
+/* Fade Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile Services */
+@media (max-width: 900px) {
+  .service-row, .service-row.reverse {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+  .service-image img {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 25px;
+  }
+  .service-text h2 {
+    font-size: 2.2rem;
+  }
+  .service-text p {
+    font-size: 1rem;
+  }
+}
+
+/* ===================== PERFUME GALLERY — POLISHED LUXURY ===================== */
+.perfume-gallery {
+  padding: 100px 0;
+  background: #0a000a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 70px; /* Slightly more breathing room */
+}
+
+.perfume-card {
+  width: 90%;
+  max-width: 780px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(184, 144, 209, 0.15);
+  border-radius: 22px;
+  padding: 36px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), 0 0 20px rgba(184, 144, 209, 0.2);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  text-align: center;
+  backdrop-filter: blur(2px);
+}
+
+.perfume-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35), 0 0 30px rgba(184, 144, 209, 0.35);
+}
+
+/* ✅ FIXED: Perfume image — show full bottle with elegant frame */
+.perfume-card img {
+  width: 100%;
+  height: auto;
+  max-height: 480px; /* Reduced from 550px */
+  object-fit: contain; /* ✅ CHANGED from 'cover' → shows full bottle */
+  border-radius: 16px;
+  margin-bottom: 28px;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(0, 0, 0, 0.1); /* subtle bg if image has transparency */
+  padding: 8px; /* creates inner frame */
+}
+
+.perfume-card:hover img {
+  transform: scale(1.01);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.perfume-card h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.3rem;
+  color: #e6d4ff;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 10px rgba(184, 144, 209, 0.4);
+}
+
+.perfume-card p {
+  color: #c9b7d9;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.12rem;
+  margin-bottom: 20px;
+  line-height: 1.65;
+  padding: 0 10px;
+}
+
+.perfume-card span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #fff;
+  display: block;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-shadow: 0 0 8px rgba(184, 144, 209, 0.3);
+  transition: text-shadow 0.3s ease;
+}
+
+.perfume-card span:hover {
+  text-shadow: 0 0 16px rgba(184, 144, 209, 0.7);
+}
+.perfume-card .perfume-image-wrapper {
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+.perfume-card .perfume-image-wrapper img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+/* ===================== PERFUME LIGHTBOX  ===================== */
+#perfume-lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 1001;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#perfume-lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+#perfume-lightbox .lightbox-content {
+  max-width: 90%;
+  max-height: 90vh; /* Critical: prevents vertical overflow */
+  width: auto;
+  height: auto;
+  object-fit: contain; /* Shows full image, no crop */
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(184, 144, 209, 0.6);
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 1002;
+  line-height: 1;
+}
+
+.lightbox-close:hover {
+  color: #b890d1;
+}
+/* ===================== GALLERY  ===================== */
+.gallery-section {
+  background: #0a000a;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(184,144,209,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(184,144,209,0.4);
+}
+
+/* ===================== SIMPLE LIGHTBOX  ===================== */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+#lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 40px rgba(184, 144, 209, 0.7);
+  animation: zoomIn 0.3s ease;
+  display: block;
+}
+
+/* REMOVED DUPLICATE @keyframes zoomIn — already defined above */
+
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.8rem;
+  cursor: pointer;
+  z-index: 1001;
+  transition: color 0.2s ease;
+  line-height: 1;
+  padding: 0;
+}
+
+.lightbox-close:hover {
+  color: #b890d1;
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: none;
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  backdrop-filter: blur(4px);
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: serif;
+}
+
+.lightbox-arrow:hover {
+  background: rgba(184, 144, 209, 0.6);
+}
+
+.lightbox-arrow.prev { left: 30px; }
+.lightbox-arrow.next { right: 30px; }
+
+/* ===================== BOOKINGS & CONTACT FORMS ===================== */
+.booking-form-section, .contact-section {
+  background: #0a000a;
+  padding: 80px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.booking-form, .contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.05);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(184,144,209,0.3);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  color: #c7b0e8;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 1rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+.form-row .half { flex: 1; }
+
+.booking-form button, .contact-form button,
+.cta-button {
+  margin-top: 20px;
+  background: #b890d1;
+  color: #000;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: 100%;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.booking-form button:hover, .contact-form button:hover,
+.cta-button:hover {
+  background: #fff;
+  color: #b890d1;
+}
+
+.quick-book {
+  color: #d0bce7;
+  margin-top: 30px;
+}
+
+.quick-book a {
+  color: #b890d1;
+  font-weight: 600;
+  text-decoration: none;
+}
+/* BOOKINGS FORM – MOBILE SAFETY */
+.booking-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.05);
+  padding: 30px 20px; /* Reduced top/bottom & added horizontal padding */
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(184,144,209,0.3);
+}
+
+@media (max-width: 320px) {
+  .booking-form {
+    padding: 24px 15px; /* Even tighter */
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px 12px; /* Slightly reduced */
+    font-size: 0.95rem;
+  }
+
+  .booking-form button {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  .quick-book {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+/* Stack Date & Time on ultra-small screens */
+@media (max-width: 320px) {
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form-row .half {
+    width: 100%;
+  }
+
+  .form-row .half input {
+    width: 100%;
+  }
+}
+@media (max-width: 320px) {
+  .booking-form {
+    padding: 24px 15px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+}
+/* ===================== ABOUT PAGE — POLISHED LAYOUT ===================== */
+
+.about-story-section,
+.founder-section {
+  background: #0a000a;
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+/* Our Story: Image left, text right */
+.about-story-section {
+  flex-direction: row; /* default: image first, then text */
+}
+
+/* Founder: Text left, image right */
+.founder-section {
+  flex-direction: row; /* text first, then image */
+}
+
+/* Content containers */
+.story-image img,
+.founder-image img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(184, 144, 209, 0.4);
+  object-fit: cover;
+}
+
+.story-content,
+.founder-text {
+  max-width: 580px;
+  color: #d3c3e0;
+}
+
+.story-content h2,
+.founder-text h2 {
+  color: #b890d1;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px rgba(184,144,209,0.3);
+}
+
+.founder-text h3 {
+  color: #fff;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.glow-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  color: #f0e7ff;
+  text-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .about-story-section,
+  .founder-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 35px;
+  }
+
+  .story-content,
+  .founder-text {
+    max-width: 100%;
+  }
+
+  .story-content h2,
+  .founder-text h2 {
+    font-size: 2rem;
+  }
+}
+
+/* ===================== CTA SECTION ===================== */
+.cta-section {
+  background: linear-gradient(180deg, #1a001a, #000);
+  padding: 100px 0;
+  text-align: center;
+}
+.cta-section h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+/* ===================== SOCIAL & CONTACT ===================== */
+.social-icons {
+  margin-top: 25px;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+.social-icons a {
+  font-size: 28px;
+  color: #cba0ff;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+.social-icons a:hover {
+  color: #e4c7ff;
+  transform: scale(1.2);
+}
+
+/* ===================== MAP ===================== */
+.map-section {
+  padding: 40px 0;
+  background: #0a000a;
+}
+.map-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #b890d1;
+}
+
+/* ===================== WHATSAPP FLOATING BUTTON ===================== */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 28px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+/* WHATSAPP FLOATING BUTTON – SAFE ON 320PX */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  text-decoration: none;
+}
+
+/* ✅ FIX FOR 320PX MOBILE */
+@media (max-width: 320px) {
+  .whatsapp-float {
+    right: 12px;    /* Reduced from 20px */
+    width: 52px;    /* Slightly smaller */
+    height: 52px;
+    font-size: 24px;
+  }
+}
+/* ===================== MOBILE FINAL SAFETY ===================== */
+@media (max-width: 480px) {
+  .about-content, .founder-section, .contact-container {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+  .service-row, .service-row.reverse {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .service-image img {
+    width: 100%;
+    height: auto;
+  }
+  .nav ul { right: 10px; width: 160px; }
+}
+
+/* Featured On */
+.featured-on {
+  text-align: center;
+  padding: 30px 0;
+  color: #b890d1;
+  background: #0a000a;
+}
+.featured-on p { font-size: 1.1rem; margin-bottom: 15px; font-family: 'Poppins', sans-serif; }
+
+.logos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* ===================== SERVICE/ABOUT/CONTACT HERO (FULL COVER) ===================== */
+.service-hero-full,
+.about-hero-full,
+.booking-hero-full,
+.gallery-hero-full,
+.perfume-hero-full,
+.contact-hero-full,
+.privacy-hero-full {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-hero-full img,
+.about-hero-full img,
+.booking-hero-full img,
+.gallery-hero-full img,
+.perfume-hero-full img,
+.contact-hero-full img,
+.privacy-hero-full img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: white;
+  z-index: 3;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.2rem;
+  color: #e6d4ff;
+  margin-bottom: 15px;
+  text-shadow: 0 0 12px rgba(184,144,209,0.5);
+}
+
+.hero-content p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  color: #f0e7ff;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+.hero-content .cta-button {
+  margin-top: 15px;
+  background: #b890d1;
+  color: #000;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hero-content .cta-button:hover {
+  background: #fff;
+  color: #b890d1;
+}
+
+/* ===================== ABOUT CONTENT LAYOUT ===================== */
+.about-story-section,
+.founder-section {
+  background: #0a000a;
+  padding: 100px 0;
+}
+
+.about-story-section .container,
+.founder-section .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1100px; /* Slightly narrower than global container for balance */
+}
+
+/* Our Story: Image left, text right */
+.about-story-section .story-image {
+  flex: 1;
+  max-width: 520px;
+}
+.about-story-section .story-content {
+  flex: 1;
+  max-width: 550px;
+  color: #d3c3e0;
+}
+
+/* Founder: Text left, image right */
+.founder-section .founder-text {
+  flex: 1;
+  max-width: 550px;
+  color: #d3c3e0;
+}
+.founder-section .founder-image {
+  flex: 1;
+  max-width: 520px;
+}
+
+/* Shared image styling */
+.story-image img,
+.founder-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(184, 144, 209, 0.4);
+  display: block;
+}
+
+/* Typography */
+.story-content h2,
+.founder-text h2 {
+  color: #b890d1;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px rgba(184,144,209,0.3);
+}
+
+.founder-text h3 {
+  color: #fff;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 6px rgba(184,144,209,0.5);
+}
+
+.glow-text,
+.story-content p,
+.founder-text p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  color: #f0e7ff;
+  text-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .about-story-section .container,
+  .founder-section .container {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .story-content,
+  .founder-text {
+    max-width: 100%;
+  }
+
+  .story-content h2,
+  .founder-text h2 {
+    font-size: 2.2rem;
+  }
+}
+/* ===================== CONTACT FORM POLISHING ===================== */
+.contact-form h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  color: #b890d1;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* VALID PLACEHOLDER STYLING (FIXED ERROR) */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #c7b0e8;
+  opacity: 0.8;
+}
+
+/* ===================== FAQ PAGE — POLISHED STYLE ===================== */
+.faq-section {
+  background: #0a000a;
+  padding: 80px 0;
+}
+
+.faq-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  padding: 18px 24px;
+  border-radius: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #b890d1;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.faq-question i {
+  color: #c7b0e8;
+  font-size: 0.9rem;
+}
+
+.faq-answer {
+  padding: 20px;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  border-left: 3px solid #b890d1;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #f0e7ff;
+  display: none; /* Initially hidden — add JS to toggle */
+}
+
+.faq-answer p {
+  margin: 0;
+}
+
+.faq-answer a {
+  color: #b890d1;
+  text-decoration: underline;
+}
+
+.faq-answer a:hover {
+  color: #e6d4ff;
+}
+
+/* ===================== PRIVACY POLICY PAGE ===================== */
+.updated-date {
+  font-style: italic;
+  color: #b890d1;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.privacy-content h2 {
+  color: #b890d1;
+  margin: 30px 0 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+}
+
+.privacy-content p,
+.privacy-content li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #d8c7e9;
+}
+
+/* ===================== THANK YOU PAGE ===================== */
+.thank-you-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.thank-you-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 20px auto 0;
+  line-height: 1.6;
+  color: #f0e6f5;
+}
+
+.cta-button-outline {
+  background: transparent;
+  border: 2px solid #b890d1;
+  color: #b890d1;
+  padding: 12px 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.cta-button-outline:hover {
+  background: #b890d1;
+  color: white;
+}
+
+/* ===================== LAYOUT HELPERS (TF STRUCTURE) ===================== */
+.contact-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.thank-you-actions {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+/* ===================== CONTACT FORM — MATCH BOOKINGS STYLE ===================== */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(184,144,209,0.3);
+}
+
+/* Match input fields to Bookings form */
+.contact-form .form-group input,
+.contact-form .form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* REMOVED INVALID &::placeholder BLOCK */
+
+/* Match button to Bookings form */
+.contact-form button {
+  margin-top: 20px;
+  background: #b890d1;
+  color: #000;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: 100%;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.contact-form button:hover {
+  background: #fff;
+  color: #b890d1;
+}
+
+/* Match Privacy & FAQ link text below button */
+.contact-form .privacy-faq-text {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #c7b0e8;
+  text-align: center;
+}
+
+.contact-form .privacy-faq-text a {
+  color: #b890d1;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.contact-form .privacy-faq-text a:hover {
+  color: #e6d4ff;
+}
+/* Add to the hero list */
+.service-hero-full,
+.about-hero-full,
+.booking-hero-full,
+.gallery-hero-full,
+.perfume-hero-full,
+.contact-hero-full,
+.privacy-hero-full,
+.faq-hero-full { /* ← add this */
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add to the image list */
+.service-hero-full img,
+.about-hero-full img,
+.booking-hero-full img,
+.gallery-hero-full img,
+.perfume-hero-full img,
+.contact-hero-full img,
+.privacy-hero-full img,
+.faq-hero-full img { /* ← add this */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+/* Add .privacy-hero-full to this list if not already present */
+.service-hero-full,
+.about-hero-full,
+.booking-hero-full,
+.gallery-hero-full,
+.perfume-hero-full,
+.contact-hero-full,
+.privacy-hero-full,   /* ← must be here */
+.faq-hero-full {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* And add .privacy-hero-full img here */
+.service-hero-full img,
+.about-hero-full img,
+.booking-hero-full img,
+.gallery-hero-full img,
+.perfume-hero-full img,
+.contact-hero-full img,
+.privacy-hero-full img,   /* ← must be here */
+.faq-hero-full img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+/* ===================== ULTRA-SMALL MOBILE SAFETY (320px) ===================== */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  /* Perfume & Review Cards */
+  .perfume-card,
+  .review-card,
+  .mission-card,
+  .review-card,
+  .faq-item .faq-question,
+  .faq-answer {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: calc(100% - 30px) !important;
+    max-width: none !important;
+  }
+
+  /* Hero Content */
+  .hero-content,
+  .slide-content {
+    padding: 0 15px;
+    max-width: none;
+  }
+
+  /* About & Founder Text */
+  .story-content,
+  .founder-text {
+    padding: 0 5px;
+  }
+
+  /* Prevent inner overflow */
+  .perfume-card img,
+  .gallery-item img,
+  .service-image img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+@media (max-width: 320px) {
+  .booking-form,
+  .contact-form {
+    padding: 20px !important;
+  }
+
+  .slide-content h2 {
+    font-size: 2rem;
+  }
+
+  .slide-content p {
+    font-size: 0.9rem;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

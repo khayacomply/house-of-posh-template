@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book your luxury beauty appointment online: makeup, hair, facials, body contouring, or perfume consultation in Johannesburg." />
+  <title>Book Appointments | House of Posh – Hair, Makeup, Facials & Perfume</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo-area">
+      <img src="assets/images/house-of-posh-logo.png" alt="House of Posh Logo" class="main-logo" loading="lazy" width="70" height="70">
+      <span class="brand-name">House of Posh</span>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="perfumes.html">Perfumes</a></li>
+        <li><a href="bookings.html" class="active">Bookings</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <section class="booking-hero-full">
+    <img src="assets/images/bookingshero.jpg" alt="House of Posh – Book Your Luxury Beauty Appointment" loading="lazy" width="1920" height="1080">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Book Your Appointment</h1>
+      <p>Wellness. Beauty. Lifestyle.</p>
+    </div>
+  </section>
+
+  <section class="booking-form-section">
+    <div class="container">
+      <form class="booking-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="e.g. 077 123 4567" required>
+        </div>
+        <div class="form-group">
+          <label for="service">Select Service</label>
+          <select id="service" required>
+            <option value="" disabled selected>Select a service</option>
+            <option>Makeup</option>
+            <option>Hair</option>
+            <option>Facials</option>
+            <option>Body Contouring</option>
+            <option>Massages</option>
+            <option>Luxury Perfume Consultation</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group half">
+            <label for="date">Choose Date</label>
+            <input type="date" id="date" required>
+          </div>
+          <div class="form-group half">
+            <label for="time">Choose Time</label>
+            <input type="time" id="time" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="notes">Additional Notes</label>
+          <textarea id="notes" placeholder="Anything else we should know?"></textarea>
+        </div>
+        <button type="submit">Submit Booking</button>
+        <p class="quick-book">
+          Your data is protected. Read our 
+          <a href="privacy-policy.html">Privacy Policy</a> 
+          or check common questions in our 
+          <a href="faq.html">FAQ</a>.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <a href="https://wa.me/27772449092" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
